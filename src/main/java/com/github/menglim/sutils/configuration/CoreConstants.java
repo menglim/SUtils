@@ -348,4 +348,14 @@ public class CoreConstants {
         FixedValue,
         RandomValue
     }
+
+    public enum ProductImportType {
+        Local,
+        Abroad
+    }
+
+    public enum CustomerType {
+        Individual,
+        Company
+    }
 }
