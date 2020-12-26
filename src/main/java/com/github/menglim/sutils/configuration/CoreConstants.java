@@ -156,7 +156,8 @@ public class CoreConstants {
         EMPLOYEE_PROFILE_PICTURE,
         BANNER,
         ICON,
-        THUMBNAIL
+        THUMBNAIL,
+        PRODUCT
     }
 
     public enum LeaveStatus {
@@ -357,5 +358,17 @@ public class CoreConstants {
     public enum CustomerType {
         Individual,
         Company
+    }
+
+    public enum ContactType{
+        MobileNo,
+        HomeNo,
+        Email,
+        Fax
+    }
+    public enum AddressType{
+        Permanent,
+        Temporary,
+        Present
     }
 }
