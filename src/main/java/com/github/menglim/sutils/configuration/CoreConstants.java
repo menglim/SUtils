@@ -157,7 +157,17 @@ public class CoreConstants {
         BANNER,
         ICON,
         THUMBNAIL,
-        PRODUCT
+        PRODUCT,
+        CATEGORY,
+        PURCHASE_ORDER,
+        SALE_ORDER
+    }
+
+    public enum StockType {
+        IN,
+        OUT,
+        ADJ,
+        RET
     }
 
     public enum LeaveStatus {
@@ -360,15 +370,21 @@ public class CoreConstants {
         Company
     }
 
-    public enum ContactType{
+    public enum ContactType {
         MobileNo,
         HomeNo,
         Email,
         Fax
     }
-    public enum AddressType{
+
+    public enum AddressType {
         Permanent,
         Temporary,
         Present
+    }
+
+    public enum SupplierType {
+        Individual,
+        Company
     }
 }
