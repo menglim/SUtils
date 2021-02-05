@@ -246,7 +246,10 @@ public class CoreConstants {
 
     public enum LocatorType {
         ATM,
-        Branch
+        Branch,
+        BICValue,
+        Merchant,
+        Agent
     }
 
     public enum RefreshTokenType {
