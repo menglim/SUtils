@@ -16,4 +16,5 @@ public class ConfigureModel {
     private String profilePictureAllowedExtension;
     private String profilePictureAllowedFileSize;
     private String profilePictureDefaultUrl;
+    private boolean systemDialogClosable;
 }
