@@ -356,7 +356,8 @@ public class CoreConstants {
 
     public enum TermConditionType {
         TermOfUse,
-        Registration
+        Registration,
+        SplitBill
     }
 
     public enum OTPGenerationMethod {
