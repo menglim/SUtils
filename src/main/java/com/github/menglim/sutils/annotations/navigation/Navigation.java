@@ -14,4 +14,11 @@ public @interface Navigation {
     boolean menu() default true;
 
     String icon() default "";
+
+    boolean anonymous() default false;
+
+    boolean slideMenu() default false;
+
+    boolean dashboardMenu() default false;
+
 }

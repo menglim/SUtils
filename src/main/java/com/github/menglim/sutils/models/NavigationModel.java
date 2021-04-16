@@ -12,6 +12,10 @@ public class NavigationModel {
     private String icon;
     private NavigationModel parent;
 
+    boolean anonymous;
+
+    boolean dashboardMenu;
+
     public NavigationModel(String url, String name, boolean menu, String icon, NavigationModel parent) {
         this.url = url;
         this.name = name;

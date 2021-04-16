@@ -161,7 +161,9 @@ public class CoreConstants {
         CATEGORY,
         PURCHASE_ORDER,
         SALE_ORDER,
-		CUSTOMER_PROFILE_PICTURE
+        CUSTOMER_PROFILE_PICTURE,
+        INVOICE,
+        RECEIPT,
     }
 
     public enum StockType {
