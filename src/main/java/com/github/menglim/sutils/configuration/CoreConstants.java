@@ -164,6 +164,9 @@ public class CoreConstants {
         CUSTOMER_PROFILE_PICTURE,
         INVOICE,
         RECEIPT,
+        SUPPLIER,
+        DELIVERY_AGENT,
+        VEHICLE,
     }
 
     public enum StockType {
