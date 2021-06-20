@@ -19,6 +19,7 @@ public class CoreConstants {
     public static final String KEY_APP_ID = "appId";
     public static final String KEY_ACCESS_TOKEN = "accessToken";
     public static final String KEY_CHECKSUM = "verifyToken";
+    public static final String DATE_FORMAT = "dd MMM yyyy";
 
     public enum OTPMethod {
         SMS,
@@ -71,14 +72,6 @@ public class CoreConstants {
         PartTime,
         Intern,
         Contractor
-    }
-
-    public enum EmploymentStatus {
-        Active,
-        Resigned,
-        Terminated,
-        OnLeave,
-        NotSet
     }
 
     public enum TShirtSize {
@@ -164,9 +157,6 @@ public class CoreConstants {
         CUSTOMER_PROFILE_PICTURE,
         INVOICE,
         RECEIPT,
-        SUPPLIER,
-        DELIVERY_AGENT,
-        VEHICLE,
     }
 
     public enum StockType {
@@ -174,17 +164,6 @@ public class CoreConstants {
         OUT,
         ADJ,
         RET
-    }
-
-    public enum LeaveStatus {
-        Plan,
-        Pending,
-        Relieved,
-        Approved,
-        Rejected,
-        Cancel_Pending,
-        Cancel_Approved,
-        Cancel_Rejected
     }
 
     public enum LinkTileColorCode {
@@ -270,6 +249,42 @@ public class CoreConstants {
     public enum NotificationType {
         AdvanceNotice,
         Transaction
+    }
+    public enum WorkDay {
+        No,
+        Full,
+        Half
+    }
+
+    public enum PriorityType{
+        Low,
+        Medium,
+        High,
+        Critical
+    }
+
+    public enum LeaveStatus {
+        Plan,
+        Pending,
+        Relieved,
+        Approved,
+        NotRelieved,
+        Rejected,
+        PendingCancel,
+        Cancelled;
+
+        public static CoreConstants.LeaveStatus[] getLeaveStatus(Optional<String[]> stringOptional) {
+            return getLeaveStatus(stringOptional.orElse(new String[]{"1"}));
+        }
+
+        public static CoreConstants.LeaveStatus[] getLeaveStatus(String[] values) {
+            LeaveStatus[] reValue = new LeaveStatus[values.length];
+            for (int i = 0; i < values.length; i++) {
+                if(!values[i].isEmpty())
+                    reValue[i] = LeaveStatus.values()[Integer.parseInt(values[i])];
+            }
+            return reValue;
+        }
     }
 
 //    public enum SCREEN_IDENTIFIER {
@@ -396,5 +411,25 @@ public class CoreConstants {
     public enum SupplierType {
         Individual,
         Company
+    }
+
+    public enum EmploymentStatus {
+        Active,
+        Resigned,
+        Terminated,
+        OnLeave,
+        NotSet;
+
+        public static CoreConstants.EmploymentStatus[] getEmploymentStatus(Optional<String[]> stringOptional) {
+            return getEmploymentStatus(stringOptional.orElse(new String[]{"1"}));
+        }
+
+        public static CoreConstants.EmploymentStatus[] getEmploymentStatus(String[] values) {
+            EmploymentStatus[] reValue = new EmploymentStatus[values.length];
+            for (int i = 0; i < values.length; i++) {
+                reValue[i] = EmploymentStatus.values()[Integer.parseInt(values[i])];
+            }
+            return reValue;
+        }
     }
 }
