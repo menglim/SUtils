@@ -160,7 +160,8 @@ public class CoreConstants {
         RECEIPT,
         SUPPLIER,
         DELIVERY_AGENT,
-        VEHICLE
+        VEHICLE,
+        LEAVE_REQUEST
     }
 
     public enum StockType {
