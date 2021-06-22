@@ -20,6 +20,7 @@ public class CoreConstants {
     public static final String KEY_ACCESS_TOKEN = "accessToken";
     public static final String KEY_CHECKSUM = "verifyToken";
     public static final String DATE_FORMAT = "dd MMM yyyy";
+    public static final String LEAVE_DATE_FORMAT = "dd MMM yyyy (a)";
 
     public enum OTPMethod {
         SMS,
@@ -157,6 +158,9 @@ public class CoreConstants {
         CUSTOMER_PROFILE_PICTURE,
         INVOICE,
         RECEIPT,
+        SUPPLIER,
+        DELIVERY_AGENT,
+        VEHICLE
     }
 
     public enum StockType {
@@ -250,13 +254,14 @@ public class CoreConstants {
         AdvanceNotice,
         Transaction
     }
+
     public enum WorkDay {
         No,
         Full,
         Half
     }
 
-    public enum PriorityType{
+    public enum PriorityType {
         Low,
         Medium,
         High,
@@ -280,7 +285,7 @@ public class CoreConstants {
         public static CoreConstants.LeaveStatus[] getLeaveStatus(String[] values) {
             LeaveStatus[] reValue = new LeaveStatus[values.length];
             for (int i = 0; i < values.length; i++) {
-                if(!values[i].isEmpty())
+                if (!values[i].isEmpty())
                     reValue[i] = LeaveStatus.values()[Integer.parseInt(values[i])];
             }
             return reValue;
