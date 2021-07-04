@@ -62,6 +62,11 @@ public class CoreConstants {
         Divorced
     }
 
+    public enum CompanyType {
+        Individual,
+        Company
+    }
+
     public enum BICMobileActivationType {
         AccountNo,
         ATMCardNo
@@ -161,7 +166,9 @@ public class CoreConstants {
         SUPPLIER,
         DELIVERY_AGENT,
         VEHICLE,
-        LEAVE_REQUEST
+        LEAVE_REQUEST,
+        COMPANY_LOGO,
+        COMPANY,
     }
 
     public enum StockType {
