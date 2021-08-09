@@ -1,9 +1,12 @@
 package com.github.menglim.sutils.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.domain.Page;
 import com.github.menglim.sutils.configuration.CoreConstants;
 
 public class Pager<T> {
+
+    @JsonIgnore
     private int buttonsToShow = 5;
 
     private int startPage;
@@ -16,6 +19,7 @@ public class Pager<T> {
         return this.data;
     }
 
+    @JsonIgnore
     public int[] getAvailablePageSizes() {
         return CoreConstants.PAGE_SIZES;
     }
