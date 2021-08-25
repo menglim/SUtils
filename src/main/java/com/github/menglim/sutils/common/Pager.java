@@ -1,8 +1,8 @@
 package com.github.menglim.sutils.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.menglim.mutils.CoreConstants;
 import org.springframework.data.domain.Page;
-import com.github.menglim.sutils.configuration.CoreConstants;
 
 public class Pager<T> {
 

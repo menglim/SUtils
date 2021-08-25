@@ -1,6 +1,7 @@
 package com.github.menglim.sutils.configuration;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.menglim.mutils.CoreConstants;
 import com.github.menglim.sutils.SUtils;
 import lombok.Getter;
 import lombok.Setter;
