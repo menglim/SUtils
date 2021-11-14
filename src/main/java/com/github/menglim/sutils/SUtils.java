@@ -36,7 +36,7 @@ public class SUtils extends AppUtils {
 
     public boolean isAjaxRequest(HttpServletRequest httpServletRequest) {
         String ajaxHeader = httpServletRequest.getHeader("X-Requested-With");
-        log.info("AjaxHeader is " + ajaxHeader);
+        //log.info("AjaxHeader is " + ajaxHeader);
         if (ajaxHeader != null && ajaxHeader.equals("XMLHttpRequest")) {
             return true;
         }
@@ -248,10 +248,19 @@ public class SUtils extends AppUtils {
         return request.getMethod().equalsIgnoreCase(HttpMethod.PUT.toString());
     }
 
-    public String getAccountNoFormat(String accountNo) {
-        return StringUtils.isNotEmpty(accountNo) ? accountNo.substring(0, 5) + " "
-                + accountNo.substring(5, 7) + " "
-                + accountNo.substring(7, 13) + " "
-                + accountNo.substring(13, 15) : null;
+    public static String getLoggedUsername() {
+        if (SecurityContextHolder.getContext() != null && SecurityContextHolder.getContext().getAuthentication() != null) {
+            return SecurityContextHolder.getContext().getAuthentication().getName();
+        }
+        return "";
+    }
+
+    public String getRequestedUrl(HttpServletRequest httpServletRequest) {
+        String uri = httpServletRequest.getScheme() + "://" +
+                httpServletRequest.getServerName() +
+                ("http".equals(httpServletRequest.getScheme()) && httpServletRequest.getServerPort() == 80 || "https".equals(httpServletRequest.getScheme()) && httpServletRequest.getServerPort() == 443 ? "" : ":" + httpServletRequest.getServerPort()) +
+                httpServletRequest.getRequestURI() +
+                (httpServletRequest.getQueryString() != null ? "?" + httpServletRequest.getQueryString() : "");
+        return uri;
     }
 }
