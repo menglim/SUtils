@@ -235,6 +235,15 @@ public class SUtils extends AppUtils {
         return basePath;
     }
 
+    public String getRequestUrl(HttpServletRequest httpServletRequest) {
+        String uri = httpServletRequest.getScheme() + "://" +
+                httpServletRequest.getServerName() +
+                ("http".equals(httpServletRequest.getScheme()) && httpServletRequest.getServerPort() == 80 || "https".equals(httpServletRequest.getScheme()) && httpServletRequest.getServerPort() == 443 ? "" : ":" + httpServletRequest.getServerPort()) +
+                httpServletRequest.getRequestURI() +
+                (httpServletRequest.getQueryString() != null ? "?" + httpServletRequest.getQueryString() : "");
+        return uri;
+    }
+
     public String getLanguageCode(HttpServletRequest httpServletRequest) {
         return AppUtils.getInstance().getLanguageCode(httpServletRequest.getLocale());
     }
